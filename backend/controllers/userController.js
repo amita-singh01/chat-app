@@ -36,6 +36,7 @@ export const register = async (req, res) => {
         })
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
     }
 };
 // -----------------For login---------------------
@@ -74,6 +75,7 @@ export const login = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
     }
 };
     // -----------------for logout-------------------
@@ -84,6 +86,7 @@ export const logout = (req, res) => {
         })
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
     }
 };
 // -----------------for getting other users-------------------
@@ -94,5 +97,6 @@ export const getOtherUsers = async (req, res) => {
         return res.status(200).json(otherUsers);
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
     }
 };
