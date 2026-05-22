@@ -12,14 +12,14 @@ const Message = ({ message }) => {
     return (
         <div ref={scroll} className={`chat ${message?.senderId === authUser?._id ? 'chat-end' : 'chat-start'}`}>
             <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
+                <div className="w-10 rounded-full border border-white/20 shadow-md">
                     <img alt="Tailwind CSS chat bubble component" src={message?.senderId === authUser?._id ? authUser?.profilePhoto : selectedUser?.profilePhoto} />
                 </div>
             </div>
             <div className="chat-header">
-                <time className="text-xs opacity-50 text-white">12:45</time>
+                <time className="text-xs text-gray-400 font-medium">12:45</time>
             </div>
-            <div className={`chat-bubble ${message?.senderId !== authUser?._id ? 'bg-gray-200 text-black' : ''} `}>{message?.message}</div>
+            <div className={`chat-bubble shadow-md ${message?.senderId !== authUser?._id ? 'bg-white/10 text-white border border-white/20' : 'bg-blue-600 text-white shadow-blue-600/30'} `}>{message?.message}</div>
         </div>
     )
 }
