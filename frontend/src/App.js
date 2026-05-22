@@ -8,8 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import io from "socket.io-client";
 import { setSocket } from './redux/socketSlice';
 import { setOnlineUsers } from './redux/userSlice';
-// import { BASE_URL } from '.';
-const BASE_URL = "https://chat-app-mlal.onrender.com";
+import { BASE_URL } from '.';
 
 const router = createBrowserRouter([
   {
